@@ -1,3 +1,8 @@
+/**
+ * Copyright (c) 2024 John Ngai
+ * All Rights Reserved
+ */
+
 const createError = require('http-errors')
 const express = require('express')
 const path = require('path')
@@ -5,6 +10,7 @@ const cookieParser = require('cookie-parser')
 const logger = require('morgan')
 
 const indexRouter = require('./routes/index')
+const scheduleRouter = require('./routes/schedule')
 const usersRouter = require('./routes/users')
 
 const app = express()
@@ -20,6 +26,7 @@ app.use(cookieParser())
 app.use(express.static(path.join(__dirname, 'public')))
 
 app.use('/', indexRouter)
+app.use('/schedule', scheduleRouter)
 app.use('/users', usersRouter)
 
 // catch 404 and forward to error handler
