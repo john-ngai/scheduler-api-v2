@@ -5,7 +5,8 @@
   "author": "John Ngai",
   "license": "UNLICENSED",
   "scripts": {
-    "start": "node app.js"
+    "start": "node app.js",
+    "test": "cross-env NODE_ENV=test jest --testTimeout=10000"
   },
   "eslintConfig": {
     "env": {
@@ -21,6 +22,12 @@
   "prettier": {
     "semi": false,
     "singleQuote": true
+  },
+  "jest": {
+    "testEnvironment": "node",
+    "coveragePathIgnorePatterns": [
+      "/node_modules/"
+    ]
   },
   "dependencies": {
     "cookie-parser": "~1.4.4",
