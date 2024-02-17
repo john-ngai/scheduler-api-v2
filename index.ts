@@ -33,11 +33,13 @@ app.use((_, __, next) => {
   next(createError(404))
 })
 
-const port = 3001
-app.listen(port, () =>
-  console.log(
-    `Schedule API v2 server is listening at http://localhost:${port}/`
+if (process.env.NODE_ENV !== 'test') {
+  const port = 3001
+  app.listen(port, () =>
+    console.log(
+      `Schedule API v2 server is listening at http://localhost:${port}/`
+    )
   )
-)
+}
 
 export default app
