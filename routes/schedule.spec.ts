@@ -6,12 +6,12 @@
 import supertest from 'supertest'
 import app from '../index'
 
-const req = supertest(app)
+const agent = supertest(app)
 
 // Command: npm test
 describe('Schedule endpoints', () => {
   it('GET /schedule', async () => {
-    const res = await req.get('/schedule')
+    const res = await agent.get('/schedule')
     expect(res.status).toEqual(200)
     expect(res.type).toEqual('application/json')
   })
