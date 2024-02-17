@@ -8,9 +8,8 @@ import express, { Application } from 'express'
 import createError from 'http-errors'
 import logger from 'morgan'
 import path from 'path'
-import { indexRouter } from './routes'
+import { indexRouter, scheduleRouter } from './routes'
 
-const scheduleRouter = require('./routes/schedule')
 // const usersRouter = require('./routes/users')
 
 const app: Application = express()
@@ -26,7 +25,7 @@ app.use(cookieParser())
 app.use(express.static(path.join(__dirname, 'public')))
 
 app.use('/', indexRouter)
-// app.use('/schedule', scheduleRouter)
+app.use('/schedule', scheduleRouter)
 // app.use('/users', usersRouter)
 
 // catch 404 and forward to error handler

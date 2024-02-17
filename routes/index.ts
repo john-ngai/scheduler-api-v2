@@ -4,3 +4,4 @@
  */
 
 export * from './indexRouter'
+export * from './scheduleRouter'

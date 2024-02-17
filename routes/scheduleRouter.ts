@@ -3,8 +3,9 @@
  * All Rights Reserved
  */
 
-const express = require('express')
-const router = express.Router()
+import express from 'express'
+
+const scheduleRouter = express.Router()
 
 const data = [
   {
@@ -14,8 +15,8 @@ const data = [
   },
 ]
 
-router.get('/', (req, res) => {
+scheduleRouter.get('/', (req, res) => {
   res.json(data)
 })
 
-module.exports = router
+export { scheduleRouter }
