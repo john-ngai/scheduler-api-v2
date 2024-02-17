@@ -1,11 +1,12 @@
 {
   "name": "scheduler-api-v2",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "private": true,
   "author": "John Ngai",
   "license": "UNLICENSED",
   "scripts": {
-    "start": "node app.js",
+    "start": "node dist/index.js",
+    "dev": "ts-node-dev index.ts",
     "test": "cross-env NODE_ENV=test jest --testTimeout=10000"
   },
   "eslintConfig": {
