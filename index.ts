@@ -10,8 +10,6 @@ import logger from 'morgan'
 import path from 'path'
 import { indexRouter, scheduleRouter } from './routes'
 
-// const usersRouter = require('./routes/users')
-
 const app: Application = express()
 
 // view engine setup
@@ -26,7 +24,6 @@ app.use(express.static(path.join(__dirname, 'public')))
 
 app.use('/', indexRouter)
 app.use('/schedule', scheduleRouter)
-// app.use('/users', usersRouter)
 
 // catch 404 and forward to error handler
 app.use((_, __, next) => {
