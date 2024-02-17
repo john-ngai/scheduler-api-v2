@@ -24,12 +24,6 @@
     "semi": false,
     "singleQuote": true
   },
-  "jest": {
-    "testEnvironment": "node",
-    "coveragePathIgnorePatterns": [
-      "/node_modules/"
-    ]
-  },
   "dependencies": {
     "cookie-parser": "~1.4.4",
     "debug": "~2.6.9",
