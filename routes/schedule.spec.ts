@@ -3,9 +3,10 @@
  * All Rights Reserved
  */
 
-const server = require('../app.js')
-const supertest = require('supertest')
-const req = supertest(server)
+import supertest from 'supertest'
+import app from '../index'
+
+const req = supertest(app)
 
 // Command: npm test
 describe('Schedule endpoints', () => {
