@@ -15,8 +15,7 @@ const data = [
 ]
 
 router.get('/', (req, res) => {
-  const response = JSON.stringify(data)
-  res.send(response)
+  res.json(data)
 })
 
 module.exports = router
