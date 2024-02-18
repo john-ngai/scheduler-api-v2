@@ -4,8 +4,9 @@
  */
 
 import express from 'express'
+import { query } from '../database'
 
-const scheduleRouter = express.Router()
+const router = express.Router()
 
 const data = [
   {
@@ -15,8 +16,19 @@ const data = [
   },
 ]
 
-scheduleRouter.get('/', (req, res) => {
+router.get('/', (req, res) => {
   res.json(data)
 })
+
+router.get('/users', async (req, res) => {
+  try {
+    const { rows } = await query(`
+    SELECT * FROM users;
+    `)
+    res.json(rows)
+  } catch {}
+})
+
+const scheduleRouter = router
 
 export { scheduleRouter }
