@@ -1,5 +1,7 @@
+.DS_Store
 node_modules
-sandbox.md
+
 sandbox.js
 sandbox.ts
+sandbox.md
 sandbox.sql
